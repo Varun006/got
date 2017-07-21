@@ -56,14 +56,10 @@
 
 @section('extra-js')
     <script>
-        @section('extra-js')
-        <script>
         $(function() {
             $('.detect').removeClass('active');
-            $('#predictions').addClass('active');
+            $('#news-article').addClass('active');
         });
-    </script>
-@stop
         /**
          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
