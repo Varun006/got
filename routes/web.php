@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group( function () {
     Route::middleware(['admin'])->group(function () {
-        auth()->loginUsingId(6);
         Route::resource('products','ProductController');
         Route::resource('answers','AnswerSetController');
         Route::resource('twists','TwistController');
