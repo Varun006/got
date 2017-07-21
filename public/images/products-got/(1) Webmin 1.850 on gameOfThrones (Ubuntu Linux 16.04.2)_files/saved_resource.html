@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://139.59.57.130:10000/filemin/index.cgi?path=/ -->
+<html data-hostname="gameOfThrones" data-session="1" data-script-name="/filemin/" data-sestatus="0" data-background-style="gainsboro" data-default-background-style="gainsboro" data-night-mode="0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title data-initial="File Manager">File Manager</title>
+
+<link rel="shortcut icon" href="https://139.59.57.130:10000/images/favicon-webmin.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>.file-input-wrapper { overflow: hidden; position: relative; cursor: pointer; z-index: 1; }.file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover { position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; filter: alpha(opacity=0); z-index: 99; outline: 0; }.file-input-name { margin-left: 8px; }</style><link href="./content.bundle.min.css" rel="stylesheet">
+<link href="./jquery.jspanel.min.css" rel="stylesheet" type="text/css"><link href="./codemirror.min.css" rel="stylesheet" type="text/css"><link href="./bundle.min.css" rel="stylesheet">
+<link href="./fonts-roboto.min.css" rel="stylesheet">
+<script src="./bundle.min.js"></script>
+<script src="./content.bundle.min.js"></script>
+<script src="./init.min.js"></script>
+</head>
+<body data-debug="production" data-usermin="0" data-shell="1" data-webmin="1" data-status="1" data-package-updates="1" data-csf="0" data-theme="blue" data-default-theme="blue" data-theme-version="18.49" data-theme-git-version="" data-level="0" data-user-home="/home/varun" data-user="varun" data-dashboard="1" data-language="en" data-charset="UTF-8" data-webprefix="" data-current-product="webmin" data-style="-webkit-filter: grayscale()  saturate() hue-rotate(deg); filter: grayscale()  saturate() hue-rotate(deg);" data-progress="1" class="filemin file-manager" data-uri="/filemin/" data-module="filemin" data-ovo="1" style="overflow: auto;">
+<div class="container-fluid col-lg-10 col-lg-offset-1" style="opacity: 1; pointer-events: auto;">
+<div class="panel panel-default">
+<div class="panel-heading">
+<table class="header" width="100%"><tbody><tr>
+<td id="headln2l" width="25%" align="left" class=""><div class="btn-group"><a href="https://139.59.57.130:10000/filemin/index.cgi" data-container="body" class="btn btn-link text-lighter" data-original-title="" title="" style="margin-right: 0 !important; padding: 6px 12px"><i class="fa fa-arrow-left" data-title="Go to previous directory (Backspace)" data-toggle="tooltip" data-original-title="" title=""></i></a><a onclick="" href="https://139.59.57.130:10000/help.cgi/authentic-theme/file-manager" data-container="body" class="btn btn-link text-lighter help_popup" data-original-title="" title="" style="color: rgb(51, 51, 51); text-decoration: none; cursor: help; padding: 6px 12px;"><i class="fa fa-question-circle"></i></a></div>
+</td>
+<td id="headln2c" align="center" width="50%"><i class="fa fa-fw fa-inverse fa-2x fa-star-o text-lighter favorites" style="position: absolute; margin-left: -35px; margin-top: 4px;"></i>&nbsp;<font size="+2">File Manager</font></td>
+<td id="headln2r" width="25%" align="right"><div class="btn-group">				<a class="btn btn-link text-lighter btn-filter-top-right text-decoration-none pull-left" data-placement="auto top" data-toggle="tooltip" data-title="Filter" data-container="body">					<label>						<input type="text" class="dataTable-mirror" placeholder="Filter">					</label>					<i class="fa fa-filter"></i>				</a>			<a href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" id="file-manager-new-instance" data-toggle="tooltip" data-title="Add new tab (Ctrl+Space)" class="btn btn-link text-lighter pull-left" style=""><i class="fa fa-plus"></i></a><a href="https://139.59.57.130:10000/filemin/config.cgi?path=" data-config-pagination="50" data-container="body" class="btn btn-link text-lighter pull-left" data-original-title="" title="" style=""><i class="fa fa-cog"></i></a></div></td></tr></tbody></table>
+</div>
+<div class="panel-body">
+<link rel="stylesheet" type="text/css" href="./style.css"><script type="text/javascript" src="./main.js"></script><script type="text/javascript" src="./chmod-calculator.js"></script><script type="text/javascript" src="./bootstrap-hover-dropdown.min.js"></script><ol class="breadcrumb pull-left"><li class="fm___root__"><a href="https://139.59.57.130:10000/filemin/index.cgi?path="><i class="fa fa-hdd-o"></i></a></li><li><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar">var<i data-path="%2F" class="fa fa-fw fa-lg fa-caret-right margined-left-4"></i></a></li><li><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww">www<i data-path="%2Fvar%2F" class="fa fa-fw fa-lg fa-caret-right margined-left-4"></i></a></li><li><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml">html<i data-path="%2Fvar%2Fwww%2F" class="fa fa-fw fa-lg fa-caret-right margined-left-4"></i></a><a class="fa fa-fw fa-keyboard-o popover-path" style="position: absolute; margin-left: 2px; margin-top: 4px; font-size: 80%;" data-container="body" data-toggle="popover-path" data-placement="auto right" data-html="true" data-trigger="click" data-content="&lt;div class=&quot;form-horizontal&quot;&gt; &lt;div class=&quot;input-group input-group-sm&quot;&gt; &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-fw fa-folder-open-o&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;input type=&quot;text&quot; class=&quot;form-control popover-path-input&quot; placeholder=&quot;Enter path manually&quot;&gt; &lt;span class=&quot;input-group-btn&quot; style=&quot;width:0;&quot;&gt; &lt;button class=&quot;btn btn-sm btn-default popover-path-button&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-fw fa-chevron-circle-right text-lighter&quot;&gt;&lt;/i&gt;&lt;span class=&quot;cspinner hidden&quot; style=&quot;margin-top: 2px; margin-left: -17px;&quot;&gt;&lt;span class=&quot;cspinner-icon small&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/button&gt; &lt;/span&gt; &lt;/div&gt; &lt;/div&gt;" data-original-title="" title=""></a></li></ol><div class="btn-group pull-right">
+  <button class="btn btn-inverse" onclick="selectAll()" title="" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Select All">
+  	<i class="fa fa-check-square-o" aria-hidden="true"></i>
+  </button>
+  <button class="btn btn-inverse" onclick="invertSelection()" title="" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Invert Selection">
+      <i class="fa fa-share-square-o" aria-hidden="true"></i>
+  </button>
+  <button class="btn btn-inverse" title="" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Refresh">
+  	<i class="fa fa-refresh" aria-hidden="true"></i>
+  </button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">
+    File <span class="caret" style="margin-left: 3px;"></span></button>
+    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+      <li>
+        <a onclick="createFileDialog()" class="no_effect" style="padding-left: 12px;"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Create new file</a>
+      </li>
+      <li class="_createFolderDialog_">
+        <a onclick="createFolderDialog()" class="no_effect" style="padding-left: 12px;"><i class="fa fa-fw fa-folder-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Create new directory</a>
+      </li><li class="o__f_m-button-compress">
+        <a class="no_effect" style="padding-left: 12px;" onclick="compressDialog()"><i class="fa fa-fw fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Create new archive</a>
+      </li>
+      <li>
+        <a onclick="viewReadyForUpload()" class="no_effect" style="padding-left: 12px;"><i class="fa fa-fw fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Upload to current directory</a>
+      </li>
+      <li>
+        <a onclick="downFromUrlDialog()" class="no_effect" style="padding-left: 12px;"><i class="fa fa-fw fa-download" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Download from remote URL</a>
+
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">
+    Edit <span class="caret" style="margin-left: 3px;"></span></button>
+    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+      <li class="o__f_m-button-copy">
+        <a class="no_effect" style="padding-left: 12px;"><i class="fa fa-fw fa-files-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Copy</a>
+      </li>
+      <li class="o__f_m-button-cut">
+        <a class="no_effect" style="padding-left: 12px;"><i class="fa fa-fw fa-scissors" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Cut</a>
+      </li>
+      <li class="o__f_m-button-paste">
+        <a class="no_effect" style="padding-left: 12px;">
+            <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i>&nbsp;&nbsp; Paste
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+    Tools <span class="caret" style="margin-left: 3px;"></span></button>
+    <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+      <li>
+        <a onclick="searchDialog()" class="no_effect" style="padding-left: 12px;">
+        	<i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp; Search
+        </a>
+      </li>
+      <li class="o__f_m-button-chmod">
+        <a class="no_effect" style="padding-left: 12px;" onclick="chmodDialog()"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i>&nbsp;&nbsp;Change permissions</a>
+      </li>
+      <li class="o__f_m-button-chown">
+        <a class="no_effect" style="padding-left: 12px;" onclick="chownDialog()"><i class="fa fa-fw fa-users" aria-hidden="true"></i>&nbsp;&nbsp;Change ownership</a>
+      </li>
+      <li class="o__f_m-button-chattr">
+        <a class="no_effect" style="padding-left: 12px;" onclick="chattrDialog()"><i class="fa fa-fw fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;Change attributes</a>
+      </li>
+      <li class="o__f_m-button-chcon hidden">
+        <a class="no_effect" style="padding-left: 12px;" onclick="chconDialog()"><i class="fa fa-fw fa-shield" aria-hidden="true"></i>&nbsp;&nbsp;Change security context</a>
+      </li>
+      
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+    Bookmarks <span class="caret" style="margin-left: 3px;"></span></button>
+    <ul class="dropdown-menu pull-right at-o__f_m-favorites-dropdown" aria-labelledby="dropdownMenu1">
+      <li>
+        <a href="https://139.59.57.130:10000/filemin/bookmark.cgi?path=/var/www/html" style="padding-left: 12px;">
+        	<i class="fa fa-fw fa-star-o" aria-hidden="true">&nbsp;&nbsp;</i> Bookmark current directory
+        </a>
+        </li>
+      
+    <li class="bm_e__me"><span class="bm_e__me_l">No saved bookmarks</span></li></ul>
+  </div>
+  <button class="btn btn-danger o__f_m-button-delete" title="" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Remove Selected" onclick="removeDialog()">
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+  </button>
+</div>
+
+
+<div id="createFolderDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-folder-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Create new directory</h4>
+            </div>
+            <div class="modal-body">
+                <form id="createFolderForm" action="https://139.59.57.130:10000/filemin/create_folder.cgi" method="post">
+                    <div class="form-group">
+                        <label>New directory name</label>
+                        <input id="name" name="name" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide directory name" data-trigger="manual">
+                        <input type="hidden" name="path" value="/var/www/html">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary _at_filemanager_create_folder_submit">Create</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="createFileDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Create new file</h4>
+            </div>
+            <div class="modal-body">
+                <form id="createFileForm" action="https://139.59.57.130:10000/filemin/create_file.cgi" method="post">
+                    <div class="form-group">
+                        <label>New file name</label>
+                        <input name="name" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide file name" data-trigger="manual">
+                        <input type="hidden" name="path" value="/var/www/html">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary _at_filemanager_create_file_submit">Create</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="renameDialog" class="modal fade" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-i-cursor" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Rename</h4>
+            </div>
+            <div class="modal-body">
+                <form id="renameForm" action="https://139.59.57.130:10000/filemin/rename.cgi" method="post">
+                    <div class="form-group">
+                        <label>New name</label>
+                        <input name="name" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide new file name" data-trigger="manual">
+                        <input type="hidden" name="file" value="index.html" required="" class="heighter-28">
+                        <input type="hidden" name="path" value="/var/www/html">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary _at_filemanager_rename_submit" name="button">Rename</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="compressDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;Create new archive</h4>
+            </div>
+            <div class="modal-body">
+                <form id="compressSelectedForm" class="form-inline">
+                    <div class="form-group">
+                        <label>Archive name</label>
+                        <input name="filename" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide file name" data-trigger="manual">
+                    </div>
+                    <select name="method">
+                        <option value="tar">.tar.gz</option>
+                        <option value="zip">.zip</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary o__f_m-submitter-compress" disabled="">Compress</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="removeDialog" class="modal fade" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-trash-o" aria-hidden="true"></i>&nbsp;&nbsp;Delete selected</h4>
+            </div>
+            <div class="modal-body">
+                You're about to delete following items:
+                <div id="items-to-remove" class="well">got 2.zip<br></div>
+                Are you sure?
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-danger _at_filemanager_delete_submit">Remove Selected</button>
+                <button type="button" class="btn bnt-primary" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="chownDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-users" aria-hidden="true"></i>&nbsp;&nbsp;Change ownership</h4>
+            </div>
+            <div class="modal-body">
+                <form id="chownForm">
+                    <div class="form-group">
+                        <label>User name</label>
+                        <input name="owner" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide user name" data-trigger="manual">
+                        <label>Group name</label>
+                        <input name="group" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide group name" data-trigger="manual">
+                        
+                        <span class="awcheckbox awobject awobjectm"><input id="recursive-aur0" type="checkbox" name="recursive" class="iawobject" style="width: initial;"><label class="lawobject" for="recursive-aur0">Recursive</label></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary o__f_m-submitter-chown">Change</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="chattrDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;Change attributes</h4>
+            </div>
+            <div class="modal-body">
+                <form id="chattrForm">
+                    <div class="form-group">
+                        <label>Attributes to apply</label>
+                        <input name="label" type="text" class="form-control heighter-28">
+                        
+                        <span class="awcheckbox awobject awobjectm"><input id="recursive-aur0" type="checkbox" name="recursive" class="iawobject" style="width: initial;"><label class="lawobject" for="recursive-aur0">Recursive</label></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary o__f_m-submitter-chattr">Change</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="chconDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-shield" aria-hidden="true"></i>&nbsp;&nbsp;Change security context</h4>
+            </div>
+            <div class="modal-body">
+                <form id="chconForm">
+                    <div class="form-group">
+                        <label>Context to apply</label>
+                        <input name="label" type="text" class="form-control heighter-28">
+                        
+                        <span class="awcheckbox awobject awobjectm"><input id="recursive-aur0" type="checkbox" name="recursive" class="iawobject" style="width: initial;"><label class="lawobject" for="recursive-aur0">Recursive</label></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary o__f_m-submitter-chcon">Change</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="chmodDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i>&nbsp;&nbsp;Change permissions</h4>
+            </div>
+            <div class="modal-body">
+                <form name="chmod" id="chmodForm">
+                    <div class="form-group">
+                        <label for="t_total">Permissions : </label>
+                        <input id="perms" type="text" name="t_total" value="0644" size="4" onkeyup="octalchange()" class="form-group-item heighter-28">
+                        <input type="text" name="sym_total" value="" size="12" readonly="true" class="form-group-item heighter-28">
+                    </div>
+                    <table class="table">
+                        <tbody><tr>
+                            <th></th>
+                            <th style="width: auto"><b>Owner</b></th>
+                            <th style="width: auto"><b>Group</b></th>
+                            <th style="width: auto"><b>Others<b></b></b></th>
+                        </tr>
+                        <tr>
+                            <td>Read</td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="owner4" value="4" onclick="calc_chmod()" class="iawobject" id="owner4"><label class="lawobject" for="owner4">&nbsp;</label></span></td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="group4" value="4" onclick="calc_chmod()" class="iawobject" id="group4"><label class="lawobject" for="group4">&nbsp;</label></span></td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="other4" value="4" onclick="calc_chmod()" class="iawobject" id="other4"><label class="lawobject" for="other4">&nbsp;</label></span></td>
+                        </tr>
+                        <tr>
+                            <td>Write</td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="owner2" value="2" onclick="calc_chmod()" class="iawobject" id="owner2"><label class="lawobject" for="owner2">&nbsp;</label></span></td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="group2" value="2" onclick="calc_chmod()" class="iawobject" id="group2"><label class="lawobject" for="group2">&nbsp;</label></span></td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="other2" value="2" onclick="calc_chmod()" class="iawobject" id="other2"><label class="lawobject" for="other2">&nbsp;</label></span></td>
+                        </tr>
+                        <tr>
+                            <td>Execute</td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="owner1" value="1" onclick="calc_chmod()" class="iawobject" id="owner1"><label class="lawobject" for="owner1">&nbsp;</label></span></td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="group1" value="1" onclick="calc_chmod()" class="iawobject" id="group1"><label class="lawobject" for="group1">&nbsp;</label></span></td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="other1" value="1" onclick="calc_chmod()" class="iawobject" id="other1"><label class="lawobject" for="other1">&nbsp;</label></span></td>
+                        </tr>
+                        <tr>
+                            <td>----------</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sticky bit</td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="sticky" value="1" onclick="calc_chmod()" class="iawobject" id="sticky"><label class="lawobject" for="sticky">&nbsp;</label></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Setgid</td>
+                            <td><span class="awcheckbox awobject awobjectm"><input type="checkbox" name="setgid" value="2" onclick="calc_chmod()" class="iawobject" id="setgid"><label class="lawobject" for="setgid">&nbsp;</label></span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody></table>
+                    <label>Apply to</label>
+                    <select name="applyto">
+                        <option value="1">Selected directories and files only</option>
+                        <option value="2">Selected files and directories and files in selected directories</option>
+                        <option value="3">All (recursive)</option>
+                        <option value="4">Selected files and files under selected directories and subdirectories</option>
+                        <option value="5">Selected directories and subdirectories</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary o__f_m-submitter-chmod">Change</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div id="downFromUrlDialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="warning"><i class="fa fa-fw fa-download" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Download from remote URL</h4>
+      </div>
+      <div class="modal-body">
+        <form id="downFromUrlForm" action="https://139.59.57.130:10000/filemin/http_download.cgi" method="post">
+          <div class="form-group">
+            <label>URL of file to download</label>
+            <input name="link" type="url" class="form-control heighter-28" data-placement="top" data-content="Provide URL of remote file" data-trigger="manual">
+          </div>
+          <div class="form-group">
+            <label>Remote server username(if any required)</label>
+            <input name="username" type="text" class="form-control heighter-28">
+          </div>
+          <div class="form-group">
+            <label>Remote server password(if any required)</label>
+            <input name="password" type="password" class="form-control heighter-28">
+          </div>
+          <input type="hidden" name="path" value="/var/www/html">
+        </form>
+      </div>
+      <div class="modal-footer"><div class="btn-group">
+        <button type="button" class="btn btn-primary o__f_m-submitter-url_download">Download</button>
+        <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div id="readyForUploadDialog" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="warning"><i class="fa fa-fw fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Upload to current directory</h4>
+      </div>
+      <div class="modal-body">
+        <form id="upload-form" method="post" action="https://139.59.57.130:10000/filemin/upload.cgi?path=&amp;id=15005470848111" enctype="multipart/form-data" onsubmit="window.open(&quot;/uptracker.cgi?id=15005470848111&amp;uid=&quot;, &quot;uptracker&quot;, &quot;toolbar=no, menubar=no, scrollbars=no, location=no, resizable=no, width=screen.width, height=screen.height&quot;)">
+            <a class="file-input-wrapper btn btn-default  heighter-28"><span><i class="fa fa-fw fa-paperclip"></i></span><input type="file" id="upfiles" name="upfiles" multiple="" onchange="countUploads(this)" class="heighter-28"></a>
+            <input type="hidden" name="path" value="/var/www/html">
+        </form>
+          <div id="readyForUploadList" class="well">
+          </div>
+      </div>
+      <div class="modal-footer"><div class="btn-group">
+        <button type="button" class="btn btn-primary" onclick="uploadFiles()">Upload Files</button>
+        <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div id="searchDialog" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="warning"><i class="fa fa-fw fa-search" aria-hidden="true"></i>&nbsp;&nbsp;Search</h4>
+            </div>
+            <div class="modal-body">
+                <form id="searchForm" action="https://139.59.57.130:10000/filemin/search.cgi" method="post">
+                    <div class="form-group">
+                        <label>Query mask</label>
+                        <input id="query" name="query" type="text" class="form-control heighter-28" data-placement="right" data-content="Provide search query" data-trigger="manual">
+                        <input type="hidden" name="path" value="/var/www/html">
+                    </div>		<div class="form-inline">			<div class="form-group">				<label>Find in results</label>				<br>				<input id="grepstring" name="grepstring" type="text" class="form-control heighter-28">			</div>			<div class="form-group" "="">				<label>Replace in results</label>				<br>				<input id="grepreplace" name="grepreplace" type="text" class="form-control heighter-28">			</div>		<span class="awcheckbox awobject awobjectm"><input id="caseins" name="caseins" type="checkbox" checked="checked" class="iawobject"><label class="lawobject" for="caseins"> Case insensitive search
+                         </label></span></div>	
+                </form>
+            </div>
+            <div class="modal-footer"><div class="btn-group">
+                <button type="button" class="btn btn-primary _at_filemanager_search_submit">Find</button>
+                <button type="button" class="btn bnt-default" data-dismiss="modal">Cancel</button>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+<div class="total">Total: 16 files and 13 directories.&nbsp;<span class="total_selected">Selected: <span>1</span> entry</span><span class="label label-warning total_size hidden"><span class="total_size_data"></span></span></div>
+<script>
+var opts = document.getElementsByClassName('ui_opt_textbox');
+for(var i=0; i<opts.length; i++) {
+  opts[i].disabled = document.getElementsByName(opts[i].name+'_def')[0].checked;
+}
+</script>
+			<div>                <div class="tabs-top">                    <ul class="nav nav-tabs" data-sortable-id="0" aria-dropeffect="move">                                            <li class="ui-sortable-handle active hidden" draggable="true" role="option" aria-grabbed="false"><a href="https://139.59.57.130:10000/filemin/index.cgi?path=/#tab-2" data-toggle="tab" aria-expanded="true"><i class="fa fa-fw fa-close-box pull-right invisible"></i><span data-tab-path="" data-toggle="tooltip" data-placement="auto top" data-original-title="/var/www/html">html</span></a></li></ul>                    <div class="tab-content">                                            <div class="tab-pane fade active in" id="tab-2">	    		<form class="ui_form" role="form" action="https://139.59.57.130:10000/filemin/index.cgi?path=/" method="post" id="list_form" name="list_form">	    			<div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="DataTables_Table_1_length"><label>Show <select name="DataTables_Table_1_length" aria-controls="DataTables_Table_1" class="form-control input-sm"><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option><option value="1000">1000</option></select> entries</label></div></div><div class="col-sm-6"><div id="DataTables_Table_1_filter" class="dataTables_filter"><label> <input type="search" class="form-control input-sm" placeholder="" aria-controls="DataTables_Table_1"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-striped table-hover table-condensed ___f_m__q__ no-footer dataTable" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info"><thead>
+<tr role="row"><th style="width: 20px; border-top: none; border-bottom: none; opacity: 0;" class="pointer-events-none sorting_disabled" rowspan="1" colspan="1" aria-label="&amp;nbsp;"><span class="awcheckbox awobject awobjectm"><input id="select-unselect" type="checkbox" onclick="selectUnselect(this)" class="iawobject"><label class="lawobject" for="select-unselect">&nbsp;</label></span></th><th style="border-top: none; border-bottom: none; width: 20px;" class="sorting_disabled" rowspan="1" colspan="1" aria-label=""><br></th><th style="width: 131px; border-top: none; border-bottom: none;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending"><span data-head-name="">Name</span></th><th style="width: 0px; border-top: none; border-bottom: none;" class="hidden sorting_disabled" rowspan="1" colspan="1" aria-label="Actions"><span data-head-actions="">Actions</span></th><th style="width: 64px; border-top: none; border-bottom: none; min-width: 51px;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Size: activate to sort column ascending"><span data-head-size="">Size</span></th><th style="width: 84px; border-top: none; border-bottom: none;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Ownership: activate to sort column ascending"><span data-head-owner_user="">Ownership</span></th><th style="width: 97px; border-top: none; border-bottom: none;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Permissions: activate to sort column ascending"><span data-head-permissions="">Permissions</span></th><th style="width: 148px; border-top: none; border-bottom: none;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Last modification time: activate to sort column ascending"><span data-head-last_mod_time="">Last modification time</span></th></tr>
+</thead><tbody class="" style="opacity: 1;"><tr class="ui_checked_columns directory_go_up" style="height: 23px;"><td colspan="7"><input class="hidden" type="hidden">&nbsp;<i class="fa fa-fw fa-folder-btl"></i>&nbsp;..</td></tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value=".idea" id="name_.idea"><label class="lawobject" for="name_.idea">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2F%2Eidea"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2F%2Eidea" data-filemin-link=".idea">.idea</a></td>
+<td class="hidden"><label for="name_.idea"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;.idea&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_.idea"></label></td>
+<td><label for="name_.idea">root:root</label></td>
+<td><label for="name_.idea">0755</label></td>
+<td><label for="name_.idea">2017/07/20 - 07:26:14</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="__MACOSX" id="name___MACOSX"><label class="lawobject" for="name___MACOSX">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2F%5F%5FMACOSX"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2F%5F%5FMACOSX" data-filemin-link="__MACOSX">__MACOSX</a></td>
+<td class="hidden"><label for="name___MACOSX"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;__MACOSX&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name___MACOSX"></label></td>
+<td><label for="name___MACOSX">root:root</label></td>
+<td><label for="name___MACOSX">0775</label></td>
+<td><label for="name___MACOSX">2017/07/20 - 09:47:02</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="app" id="name_app"><label class="lawobject" for="name_app">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fapp"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fapp" data-filemin-link="app">app</a></td>
+<td class="hidden"><label for="name_app"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;app&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_app"></label></td>
+<td><label for="name_app">root:root</label></td>
+<td><label for="name_app">0755</label></td>
+<td><label for="name_app">2017/07/14 - 09:20:02</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="bootstrap" id="name_bootstrap"><label class="lawobject" for="name_bootstrap">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fbootstrap"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fbootstrap" data-filemin-link="bootstrap">bootstrap</a></td>
+<td class="hidden"><label for="name_bootstrap"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;bootstrap&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_bootstrap"></label></td>
+<td><label for="name_bootstrap">root:root</label></td>
+<td><label for="name_bootstrap">0755</label></td>
+<td><label for="name_bootstrap">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="config" id="name_config"><label class="lawobject" for="name_config">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fconfig"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fconfig" data-filemin-link="config">config</a></td>
+<td class="hidden"><label for="name_config"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;config&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_config"></label></td>
+<td><label for="name_config">root:root</label></td>
+<td><label for="name_config">0755</label></td>
+<td><label for="name_config">2017/07/13 - 06:55:56</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="database" id="name_database"><label class="lawobject" for="name_database">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fdatabase"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fdatabase" data-filemin-link="database">database</a></td>
+<td class="hidden"><label for="name_database"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;database&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_database"></label></td>
+<td><label for="name_database">root:root</label></td>
+<td><label for="name_database">0755</label></td>
+<td><label for="name_database">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="got" id="name_got"><label class="lawobject" for="name_got">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fgot"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fgot" data-filemin-link="got">got</a></td>
+<td class="hidden"><label for="name_got"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;got&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_got"></label></td>
+<td><label for="name_got">root:root</label></td>
+<td><label for="name_got">0755</label></td>
+<td><label for="name_got">2017/07/17 - 14:05:41</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="public" id="name_public"><label class="lawobject" for="name_public">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fpublic"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fpublic" data-filemin-link="public">public</a></td>
+<td class="hidden"><label for="name_public"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;public&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_public"></label></td>
+<td><label for="name_public">root:root</label></td>
+<td><label for="name_public">0755</label></td>
+<td><label for="name_public">2017/07/12 - 11:24:55</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="resources" id="name_resources"><label class="lawobject" for="name_resources">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fresources"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fresources" data-filemin-link="resources" data-original-title="" title="">resources</a></td>
+<td class="hidden"><label for="name_resources"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;resources&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_resources"></label></td>
+<td><label for="name_resources">root:root</label></td>
+<td><label for="name_resources">0755</label></td>
+<td><label for="name_resources">2017/07/12 - 06:56:18</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="routes" id="name_routes"><label class="lawobject" for="name_routes">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Froutes"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Froutes" data-filemin-link="routes" data-original-title="" title="">routes</a></td>
+<td class="hidden"><label for="name_routes"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;routes&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_routes"></label></td>
+<td><label for="name_routes">root:root</label></td>
+<td><label for="name_routes">0755</label></td>
+<td><label for="name_routes">2017/07/19 - 16:11:53</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="storage" id="name_storage"><label class="lawobject" for="name_storage">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fstorage" data-original-title="" title=""><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fstorage" data-filemin-link="storage">storage</a></td>
+<td class="hidden"><label for="name_storage"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;storage&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_storage"></label></td>
+<td><label for="name_storage">root:root</label></td>
+<td><label for="name_storage">0755</label></td>
+<td><label for="name_storage">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="tests" id="name_tests"><label class="lawobject" for="name_tests">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Ftests"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Ftests" data-filemin-link="tests">tests</a></td>
+<td class="hidden"><label for="name_tests"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;tests&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_tests"></label></td>
+<td><label for="name_tests">root:root</label></td>
+<td><label for="name_tests">0755</label></td>
+<td><label for="name_tests">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="vendor" id="name_vendor"><label class="lawobject" for="name_vendor">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fvendor"><img src="./inode-directory.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/index.cgi?path=%2Fvar%2Fwww%2Fhtml%2Fvendor" data-filemin-link="vendor">vendor</a></td>
+<td class="hidden"><label for="name_vendor"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;vendor&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_vendor"></label></td>
+<td><label for="name_vendor">root:root</label></td>
+<td><label for="name_vendor">0755</label></td>
+<td><label for="name_vendor">2017/07/13 - 06:29:08</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value=".DS_Store" id="name_.DS_Store"><label class="lawobject" for="name_.DS_Store">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2EDS%5FStore&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./application-octet-stream.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2EDS%5FStore&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link=".DS_Store">.DS_Store</a></td>
+<td class="hidden"><label for="name_.DS_Store"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;.DS_Store&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_.DS_Store">8 kB</label></td>
+<td><label for="name_.DS_Store">root:root</label></td>
+<td><label for="name_.DS_Store">0644</label></td>
+<td><label for="name_.DS_Store">2017/07/15 - 09:51:09</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd hl-aw" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value=".env" id="name_.env"><label class="lawobject" for="name_.env">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Eenv&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-plain.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Eenv&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link=".env">.env</a></td>
+<td class="hidden"><label for="name_.env"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;.env&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=%2Eenv&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_.env">849 bytes</label></td>
+<td><label for="name_.env">root:root</label></td>
+<td><label for="name_.env">0644</label></td>
+<td><label for="name_.env">2017/07/13 - 08:19:56</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value=".env.example" id="name_.env.example"><label class="lawobject" for="name_.env.example">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Eenv%2Eexample&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-plain.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Eenv%2Eexample&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link=".env.example">.env.example</a></td>
+<td class="hidden"><label for="name_.env.example"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;.env.example&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=%2Eenv%2Eexample&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_.env.example">521 bytes</label></td>
+<td><label for="name_.env.example">root:root</label></td>
+<td><label for="name_.env.example">0644</label></td>
+<td><label for="name_.env.example">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value=".gitattributes" id="name_.gitattributes"><label class="lawobject" for="name_.gitattributes">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Egitattributes&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-plain.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Egitattributes&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link=".gitattributes">.gitattributes</a></td>
+<td class="hidden"><label for="name_.gitattributes"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;.gitattributes&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=%2Egitattributes&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_.gitattributes">111 bytes</label></td>
+<td><label for="name_.gitattributes">root:root</label></td>
+<td><label for="name_.gitattributes">0644</label></td>
+<td><label for="name_.gitattributes">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value=".gitignore" id="name_.gitignore"><label class="lawobject" for="name_.gitignore">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Egitignore&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-plain.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=%2Egitignore&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link=".gitignore">.gitignore</a></td>
+<td class="hidden"><label for="name_.gitignore"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;.gitignore&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=%2Egitignore&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_.gitignore">146 bytes</label></td>
+<td><label for="name_.gitignore">root:root</label></td>
+<td><label for="name_.gitignore">0644</label></td>
+<td><label for="name_.gitignore">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="artisan" id="name_artisan"><label class="lawobject" for="name_artisan">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=artisan&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-plain.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=artisan&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="artisan">artisan</a></td>
+<td class="hidden"><label for="name_artisan"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;artisan&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=artisan&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_artisan">1.61 kB</label></td>
+<td><label for="name_artisan">root:root</label></td>
+<td><label for="name_artisan">0644</label></td>
+<td><label for="name_artisan">2017/07/12 - 06:53:49</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="composer.json" id="name_composer.json"><label class="lawobject" for="name_composer.json">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=composer%2Ejson&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./unknown.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=composer%2Ejson&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="composer.json">composer.json</a></td>
+<td class="hidden"><label for="name_composer.json"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;composer.json&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=composer%2Ejson&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_composer.json">1.35 kB</label></td>
+<td><label for="name_composer.json">root:root</label></td>
+<td><label for="name_composer.json">0644</label></td>
+<td><label for="name_composer.json">2017/07/13 - 06:27:58</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="composer.lock" id="name_composer.lock"><label class="lawobject" for="name_composer.lock">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=composer%2Elock&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-plain.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=composer%2Elock&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="composer.lock">composer.lock</a></td>
+<td class="hidden"><label for="name_composer.lock"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;composer.lock&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=composer%2Elock&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_composer.lock">132.82 kB</label></td>
+<td><label for="name_composer.lock">root:root</label></td>
+<td><label for="name_composer.lock">0644</label></td>
+<td><label for="name_composer.lock">2017/07/13 - 06:29:06</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="got_2017-07-17.sql" id="name_got_2017-07-17.sql"><label class="lawobject" for="name_got_2017-07-17.sql">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=got%5F2017%2D07%2D17%2Esql&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./unknown.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=got%5F2017%2D07%2D17%2Esql&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="got_2017-07-17.sql">got_2017-07-17.sql</a></td>
+<td class="hidden"><label for="name_got_2017-07-17.sql"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;got_2017-07-17.sql&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_got_2017-07-17.sql">57.83 kB</label></td>
+<td><label for="name_got_2017-07-17.sql">root:root</label></td>
+<td><label for="name_got_2017-07-17.sql">0644</label></td>
+<td><label for="name_got_2017-07-17.sql">2017/07/17 - 14:05:41</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="index-1.html" id="name_index-1.html"><label class="lawobject" for="name_index-1.html">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=index%2D1%2Ehtml&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./text-html.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=index%2D1%2Ehtml&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="index-1.html">index-1.html</a></td>
+<td class="hidden"><label for="name_index-1.html"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;index-1.html&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=index%2D1%2Ehtml&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_index-1.html">11.06 kB</label></td>
+<td><label for="name_index-1.html">root:root</label></td>
+<td><label for="name_index-1.html">0644</label></td>
+<td><label for="name_index-1.html">2017/07/18 - 14:26:25</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns even" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="info.php" id="name_info.php"><label class="lawobject" for="name_info.php">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=info%2Ephp&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./application-x-php.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=info%2Ephp&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="info.php">info.php</a></td>
+<td class="hidden"><label for="name_info.php"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;info.php&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=info%2Ephp&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_info.php">21 bytes</label></td>
+<td><label for="name_info.php">root:root</label></td>
+<td><label for="name_info.php">0644</label></td>
+<td><label for="name_info.php">2017/07/18 - 14:56:36</label></td>
+</tr><tr bgcolor="#cccccc" class="ui_checked_columns odd" role="row">
+<td class="ui_checked_checkbox"><span class="awcheckbox awobject awobjectm"><input class="ui_checkbox iawobject" type="checkbox" name="name" value="package.json" id="name_package.json"><label class="lawobject" for="name_package.json">&nbsp;</label></span> 
+</td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=package%2Ejson&amp;path=%2Fvar%2Fwww%2Fhtml%2F"><img src="./unknown.png"></a></td>
+<td><a href="https://139.59.57.130:10000/filemin/download.cgi?file=package%2Ejson&amp;path=%2Fvar%2Fwww%2Fhtml%2F" data-filemin-link="package.json">package.json</a></td>
+<td class="hidden"><label for="name_package.json"><a class="action-link" href="javascript:void(0)" onclick="renameDialog(&quot;package.json&quot;)" title="Rename" data-container="body"><i class="fa fa-i-cursor" title="Rename" style="margin-right: 5px; margin-left: 5px;"></i></a><a class="action-link" href="https://139.59.57.130:10000/filemin/edit_file.cgi?file=package%2Ejson&amp;path=%2Fvar%2Fwww%2Fhtml" title="Edit" data-container="body"><i class="fa fa-edit fa-pencil-square-o" alt="Edit" style="margin-right: 7px; margin-left: 7px;"></i></a></label></td>
+<td class="column-filesize"><label for="name_package.json">1.04 kB</label></td>
+<td><label for="name_package.json">root:root</label></td>
+<td><label for="name_package.json">0644</label></td>
+<td><label for="name_package.json">2017/07/12 - 06:53:49</label></td>
+</tr></tbody></table></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="DataTables_Table_1_info" role="status" aria-live="polite">Showing 1 to 25 of 29 entries</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_1_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_1_previous"><a href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" aria-controls="DataTables_Table_1" data-dt-idx="0" tabindex="0" style="border-top-left-radius: 0px; border-bottom-left-radius: 0px;"><i class="fa fa-fw fa-angle-left"></i></a></li><li class="paginate_button active"><a href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" aria-controls="DataTables_Table_1" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" aria-controls="DataTables_Table_1" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button next" id="DataTables_Table_1_next"><a href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" aria-controls="DataTables_Table_1" data-dt-idx="3" tabindex="0" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;"><i class="fa fa-fw fa-angle-right"></i></a></li></ul></div></div></div></div>	    			<input class="ui_hidden heighter-34" type="hidden" name="path" id="path" value="%2Fvar%2Fwww%2Fhtml">	    		</form>	        </div></div>                </div>            </div>        </div>
+</div>
+</div>
+<script src="./postinit.min.js"></script><script>___authentic_theme_footer___ = 1;</script>
+<script src="./content.min.js"></script><span id="favorites-target" style="position: absolute; top: 0; right: 0; visibility: hidden"></span>
+<script src="./file-manager.min.js"></script><ul id="__f__c__m" class="dropdown-menu" role="menu" style="display: none; position: absolute; left: 109px; top: 183.062px;">		            <li class="context-o__f_m-dependent-goto hidden"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-goto="1"><i class="fa fa-fw fa-folder-open-o"></i>&nbsp;&nbsp;Open item location</a></li>		            <li class="divider context-o__f_m-dependent-goto hidden"></li>		            <li class="context-o__f_m-dependent-open-new-tab hidden"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-open-new-tab="1"><i class="fa fa-fw fa-tab"></i>&nbsp;&nbsp;Open in new tab</a></li>		            <li class="divider context-o__f_m-dependent-open-new-tab hidden"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-select-all="1"><i class="fa fa-fw fa-check-square-o"></i>&nbsp;&nbsp;Select All</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-deselect-all="1"><i class="fa fa-fw fa-square-o"></i>&nbsp;&nbsp;Deselect All</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-invert-selection="1"><i class="fa fa-fw fa-share-square-o"></i>&nbsp;&nbsp;Invert Selection</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-refresh="1">&nbsp;&nbsp;Refresh</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#">&nbsp;&nbsp;New</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-newfile="1"><i class="fa fa-fw fa-file-o"></i>&nbsp;&nbsp;&nbsp;Create new file</a></li>		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-newfolder="1"><i class="fa fa-fw fa-folder-o"></i>&nbsp;&nbsp;&nbsp;Create new directory</a></li>		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-newarchive="1"><i class="fa fa-fw fa-file-archive-o"></i>&nbsp;&nbsp;&nbsp;Create new archive</a></li>		            		<li class="dropdown-submenu" role="menu">				            	<a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#"><i class="fa fa-fw fa-exchange"></i>&nbsp;&nbsp;Transfer</a>				            	<ul class="dropdown-menu" role="menu">				            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-upload="1"><i class="fa fa-fw fa-upload"></i>&nbsp;&nbsp;&nbsp;Upload to current directory</a></li>				            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-download="1"><i class="fa fa-fw fa-download"></i>&nbsp;&nbsp;&nbsp;Download from remote URL</a></li>				            	</ul>				            </li>		            	</ul>		            </li>		            <li class="divider"></li>		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-copy="1"><i class="fa fa-fw fa-files-o"></i>&nbsp;&nbsp;Copy</a>		            	<ul class="dropdown-menu" role="menu">		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-clipboard="1"><i class="fa fa-fw fa-clone"></i>&nbsp;&nbsp;Copy path to clipboard</a></li>		            	</ul>		            </li>		            <li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-cut="1"><i class="fa fa-fw fa-scissors"></i>&nbsp;&nbsp;Cut</a></li>		            <li class=""><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-paste="1" class=""><i class="fa fa-fw fa-clipboard"></i>&nbsp;&nbsp;Paste</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-delete="1"><i class="fa fa-fw fa-trash"></i>&nbsp;&nbsp;Delete</a></li>		            <li class="divider"></li>		            <li class="context-o__f_m-dependent-edit"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-edit="1">&nbsp;&nbsp;Edit</a></li>		            <li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-rename="1">&nbsp;&nbsp;Rename</a></li>		            <li class="context-o__f_m-dependent-download"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-download-file="1">&nbsp;&nbsp;Download</a></li>		            <li class="divider"></li>		            <li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-search="1"><i class="fa fa-fw fa-search"></i>&nbsp;&nbsp;Search</a></li>		            <li class="divider"></li>		            		            <li class="dropdown-submenu" role="menu">		            	<a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#"><i class="fa fa-fw fa-star-o"></i>&nbsp;&nbsp;Bookmarks</a>		            	<ul class="dropdown-menu at-o__f_m-favorites-dropdown dropdown-submenu-bookmarks" role="menu">		            		<li class="data-context-bookmarks"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-bookmarks="1">Bookmark current directory</a></li>		            		<li class="divider"></li><li class="bm_e__me"><span class="bm_e__me_l">No saved bookmarks</span></li>		            	</ul>		            </li>		            		            <li class="divider context-o__f_m-dependent-extract hidden"></li>		            <li class="context-o__f_m-dependent-extract hidden"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-extract="1"><i class="fa fa-fw fa-extract-archive"></i>&nbsp;&nbsp;Extract</a></li>		            <li class="divider"></li>		            <li class="dropdown-submenu context-properties" role="menu">		            	<a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#">&nbsp;&nbsp;Properties</a>		            	<ul class="dropdown-menu dropdown-submenu-properties" role="menu" style="top: -74px;">		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-calculate-selected-size="1"><i class="fa fa-fw fa-calculator"></i>&nbsp;&nbsp;Calculate selected size</a></li>		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-chmod="1"><i class="fa fa-fw fa-cogs"></i>&nbsp;&nbsp;Change permissions</a></li>		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-chown="1"><i class="fa fa-fw fa-users"></i>&nbsp;&nbsp;Change ownership</a></li>		            		<li><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-chattr="1"><i class="fa fa-fw fa-tags"></i>&nbsp;&nbsp;Change attributes</a></li>		            		<li class="hidden"><a tabindex="-1" href="https://139.59.57.130:10000/filemin/index.cgi?path=/#" data-context-chcon="1"><i class="fa fa-fw fa-shield"></i>&nbsp;&nbsp;Change security context</a></li>		            	</ul>		            </li>		        </ul>
+
+
+<div id="jsPanel-replacement-container"></div><div class="jsPanel jsPanel-theme-default jspShown" id="jsPanel-1" data-btnclose="enabled" data-btnmaximize="enabled" data-btnnormalize="enabled" data-btnminimize="enabled" data-btnsmallify="removed" data-btnsmallifyrev="enabled" data-uid="jsp_829339032921346600" style="width: 907.188px; height: 507.5px; z-index: 1000; position: fixed; left: 50.5px; top: 108.5px; opacity: 1;">
+                <div class="jsPanel-hdr jsPanel-theme-default">
+                    <div class="jsPanel-headerbar">
+                        <div class="jsPanel-headerlogo"></div>
+                        <div class="jsPanel-titlebar">
+                            <h3 class="jsPanel-title"><i class="fa fa-fw fa-lg fa-edit __helper___ pointer-events-none" data-original-title="" title="">&nbsp;&nbsp;</i><strong title=".env (/var/www/html)">.env (/var/www/html)</strong></h3>
+                        </div>
+                        <div class="jsPanel-controlbar"><div data-encoding-label="" class="jsPanel-btn text-light cursor-default" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}" data-title="Set encoding"><label class="select-styled select-styled-small select-styled-no-border select-styled-no-icon"> <select required="" data-encoding="" dir="rtl" style="width: 40.2656px;" class=""><option value="UTF-8" selected="">utf-8</option><option value="ISO-8859-1">iso-8859-1 (cp1252)‎</option><option value="windows-1252">cp1252 (iso-8859-1)‎</option><option value="windows-1250">cp1250</option><option value="windows-1251">cp1251</option><option value="windows-1253">cp1253</option><option value="windows-1254">cp1254</option><option value="windows-1255">cp1255</option><option value="windows-1256">cp1256</option><option value="ISO-8859-2">iso-8859-2</option><option value="ISO-8859-7">iso-8859-7</option><option value="ISO-8859-9">iso-8859-9</option><option value="ISO-8859-15">iso-8859-15</option><option value="US-ASCII">ascii</option><option value="x-IBM874">cp874</option><option value="IBM866">cp866</option><option value="KOI8-R">koi8</option><option value="EUC-KR">EUC encoding, Korean</option><option value="EUC-JP">EUC encoding, Japanese</option><option value="Shift_JIS">Shift-JIS, Japanese</option></select> </label></div>                        <div class="jsPanel-btn jsPanel-btn-save _filemanager_file_editor_save" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}" data-title="Save" data-original-title="" title=""><i class="fa fa-fw fa-save"></i></div>                        <div class="dropdown" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}">                          <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">                            <i class="fa fa-menu"></i>                          </span>                          <ul class="dropdown-menu dropdown-menu-right small">                            <li class="jsPanel-btn-align vertical disabled"><a class="ddm-link" href="javascript:;"><i class="fa fa-align-horizontal-middle pull-left margined-top-2"></i>Align Panels Vertically</a></li>                            <li class="jsPanel-btn-align hidden horizontal disabled"><a class="ddm-link" href="javascript:;"><i class="fa fa-align-vertical-middle pull-left margined-top-2"></i>Align Panels Horizontally</a></li>                            <li class="jsPanel-btn-togglewrap"><a class="ddm-link" href="javascript:;"><i class="fa fa-wrap-text pull-left margined-top-2"></i>Toggle Soft Wrap</a></li>                            <li role="separator" class="divider"></li>                            <li class="jsPanel-btn-content-refresh"><a class="ddm-link" href="javascript:;"><i class="fa fa-refresh pull-left margined-top-3"></i>Refresh Content</a></li>                            <li class="__helper___tr"><a class="ddm-link" href="javascript:;">Help</a></li>                          </ul>                        </div>                    
+                            
+                            <div class="jsPanel-btn jsPanel-btn-smallifyrev" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}"><span class="jsglyph jsglyph-chevron-down"></span></div>
+                            <div class="jsPanel-btn jsPanel-btn-minimize" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}" data-title="Minimize"><span class="jsglyph jsglyph-minimize"></span></div>
+                            <div class="jsPanel-btn jsPanel-btn-normalize" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}" data-title="Normalize"><span class="jsglyph jsglyph-normalize"></span></div>
+                            <div class="jsPanel-btn jsPanel-btn-maximize" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}" data-title="Maximize"><span class="jsglyph jsglyph-maximize"></span></div>
+                            <div class="jsPanel-btn jsPanel-btn-close" data-toggle="tooltip" data-placement="auto top" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;30&quot;}" data-title="Close"><span class="jsglyph jsglyph-close"></span></div>
+                        </div>
+                    </div>
+                    <div class="jsPanel-hdr-toolbar"></div>
+                </div>
+                <div class="jsPanel-content jsPanel-content-nofooter" style="border-top: 1px solid rgb(0, 0, 0); height: 479.5px; width: 100%; overflow: hidden;"><form class="ui_form" role="form" action="https://139.59.57.130:10000/filemin/save_file.cgi" method="post" data-encoding=""><input class="ui_hidden" type="hidden" name="path" value="/var/www/html"><input class="ui_hidden" type="hidden" name="file" value=".env"><textarea style="display: none; width: 100%;" class="form-control ui_textarea" name="data" rows="20" cols="80">APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:tmMOPvfqHOKl7L3Rlp8668lFybLAfsrGDrRJviyV9XU=
+APP_DEBUG=true
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=got
+DB_USERNAME=root
+DB_PASSWORD=
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+
+TWITTER_ID = qZOw1QSaQw1rZdoA6slK4AZHc
+TWITTER_SECRET = jpQIiguLTGnMrOxWWJJXYj3rtiWn4blyd6eUVQGHV8DoJoI6Yi
+TWITTER_URL = http://got.dev/auth/twitter/callback
+
+FACEBOOK_ID = 1323924781039533
+FACEBOOK_SECRET = 3fdb988401281f978f2b6d06cd0ee21a
+FACEBOOK_URL = http://got.dev/auth/facebook/callback</textarea><div class="CodeMirror cm-s-monokai CodeMirror-wrap" style="height: 479px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 242px; left: 185px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 705px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 37px; margin-bottom: -9px; border-right-width: 21px; min-height: 705px; padding-right: 9px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 148px; top: 238px; height: 17px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">APP_NAME=Laravel</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">APP_ENV=local</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">APP_KEY=base64:tmMOPvfqHOKl7L3Rlp8668lFybLAfsrGDrRJviyV9XU=</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">APP_DEBUG=true</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">APP_LOG_LEVEL=debug</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">APP_URL=http://localhost</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">DB_CONNECTION=mysql</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">DB_HOST=139.59.57.130</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">DB_PORT=3306</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">DB_DATABASE=got</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">DB_USERNAME=root</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">DB_PASSWORD=</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -37px; width: 37px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">BROADCAST_DRIVER=<span class="cm-overlay cm-matchhighlight">log</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">CACHE_DRIVER=file</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">SESSION_DRIVER=file</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">QUEUE_DRIVER=sync</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">REDIS_HOST=127.0.0.1</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">REDIS_PASSWORD=null</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">REDIS_PORT=6379</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">MAIL_DRIVER=smtp</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">MAIL_HOST=smtp.mailtrap.io</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">MAIL_PORT=2525</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">MAIL_USERNAME=null</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">MAIL_PASSWORD=null</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">MAIL_ENCRYPTION=null</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">PUSHER_APP_ID=</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">PUSHER_APP_KEY=</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">PUSHER_APP_SECRET=</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">TWITTER_ID = qZOw1QSaQw1rZdoA6slK4AZHc</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">TWITTER_SECRET = jpQIiguLTGnMrOxWWJJXYj3rtiWn4blyd6eUVQGHV8DoJoI6Yi</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -37px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">TWITTER_URL = http://www.gameofthronesfanworld.com/auth/twitter/callback</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 21px; width: 1px; border-bottom: 0px solid transparent; top: 705px;"></div><div class="CodeMirror-gutters" style="height: 726px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div><div style="position: absolute; right: 0px; top: 0px; z-index: 7; pointer-events: none;"><div class="CodeMirror-selection-highlight-scrollbar" style="position: absolute; right: 0px; width: 8px; top: 159.667px; height: 11.2163px;"></div></div></div></form></div>
+                <div class="jsPanel-minimized-box"></div>
+                <div class="jsPanel-ftr"></div>
+               <div class="jsPanel-resizeit-handle jsPanel-resizeit-n" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-e" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-s" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-w" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-ne" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-se" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-sw" style="z-index: 90;"></div><div class="jsPanel-resizeit-handle jsPanel-resizeit-nw" style="z-index: 90;"></div></div></body></html>

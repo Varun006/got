@@ -1,0 +1,114 @@
+/*atul code*/
+.header-top{padding: 2em 0;}
+.header.remove-bg{background-image: none; min-height: auto;}
+
+.video-wrapper{width: 100%; float: left; height:calc(100vh - 110px);}
+.video-wrapper iframe{width: 100%; height:calc(100vh - 110px);}
+
+.thumb-wrap{width: 100%; float: left; margin-top: 30px;}.
+                                                        .thumb-wrap ul{margin: 0; padding: 0; width: 100%;}
+.thumb-wrap ul li{width: 10%; float: left; margin: 0; padding: 0; list-style-type: none;}
+
+.form-wrap{width: 100%; float: left; margin: 30px 0;}
+.form-wrap .contact-leftgrid ul{margin: 0; padding: 0; width: 100%;}
+.form-wrap .contact-leftgrid ul li{width:45%; margin:15px; list-style-type: none; float: left;}
+.form-wrap .contact-leftgrid ul li:nth-child(3){width:calc(100% - 90px);}
+.form-wrap .contact-leftgrid input[type="submit"], .form-wrap .contact-leftgrid input[type="text"], .form-wrap .contact-leftgrid textarea{margin: 0;}
+
+.checkBox-wrap{width: 100%; float: left; margin:30px 0 0;}
+.checkBox-wrap .check{opacity:0.5; color:#fff;}
+.checkBox-wrap .product-thumb{width:25%; padding:0px;}
+.checkBox-wrap .form-group {margin-bottom: 15px; width: 100%; display: inline-block;}
+.checkBox-wrap .btn-primary{border: none; background-color:transparent; padding: 0;}
+.img-thumbnail{padding: 0; border-radius: 0; background-color: transparent; border: none;}
+h2 span{color: #fac832;}
+
+.about-section .news-grids p{color: #fff; font-size: 13px; line-height: 21px; margin: 10px 0 0; display: inline-block; width: 100%;}
+
+.product-section .product-col{margin-bottom: 30px;}
+.product-section .product-col{background-color: #111; padding: 15px;}
+.product-section h2{font-size: 20px; font-weight: normal; margin-top: 15px; color: #FFF;}
+.product-section  p{color: #666; font-size: 13px; line-height: 21px; margin: 10px 0 0; display: inline-block; width: 100%;}
+.product-section a{color: #fac832; font-weight: 600; border: 1px solid #fac832; font-size: 13px; margin: 20px 0px; margin-bottom: 0px; color: #fac832 ; text-transform: uppercase; display: inline-block; padding: 10px 25px;}
+.product-section a:hover{background-color: #fac832; color: #FFF; border: 1px solid #fac832;}
+h1{color: #FFF; font-size: 32px;  text-transform:capitalize;}
+h1 span  {color: #fac832;}
+.product-details{margin-top: 40px;}
+.sign-section{margin-top: 40px;}
+.sign-section input{width: 100%; padding: 10px; background-color: #333; border: 1px solid #444; font-size: 13px; color: #666;}
+.sign-section button{color: #fac832; font-weight: 600; border: 1px solid #fac832; font-size: 13px; margin: 20px 0px; margin-bottom: 0px; color: #fac832 ; text-transform: uppercase; display: inline-block; padding: 10px 25px; background-color: transparent;}
+
+.sign-section abbr{width: 100%; text-align: right; color:#fac832; display: inline-block; font-size: 11px; }
+.sign-section abbr a{color:#fac832; text-decoration:underline;}
+a.face-book-btn{background-color: #1c70b8; color: #FFF; margin-right: 15px; font-size: 14px; display: inline-block; padding: 10px 25px; line-height: 15px; text-transform: uppercase;}
+a.google-btn{background-color:red; color: #FFF; margin-right: 15px; font-size: 14px; display: inline-block; padding: 10px 25px; line-height: 15px; text-transform: uppercase;}
+a.twitter-btn{background-color:#35b5e4; color: #FFF; margin-right: 15px; font-size: 14px; display: inline-block; padding: 10px 25px; line-height: 15px; text-transform: uppercase;}
+.social-login{margin-top: 50px; padding-top: 50px; border-top:1px solid #444;}
+
+.news-section{margin-top: 40px;}
+.news-col{margin-bottom: 30px;background-color: #111; padding: 15px; }
+.news-col .img-box{margin: 0 -15px;}
+.news-col h2{font-size: 20px; font-weight: normal; margin:15px 0px;  color: #FFF;}
+.news-col h4{font-size: 14px; font-weight: normal; margin:15px 0px;  color: #333;}
+.news-col p{color: #666; font-size: 13px; line-height: 21px; margin: 10px 0 0; display: inline-block; width: 100%;}
+.paginations ul{text-align: right;}
+.paginations li{display: inline-block; margin: 0 10px; }
+.paginations a{color: #fac832; font-weight: 600; border: 1px solid #fac832; font-size: 13px; margin: 20px 0px; margin-bottom: 0px; color: #fac832 ; text-transform: uppercase; display: inline-block; padding: 5px 10px;}
+
+.more-news{margin-top: 40px; background-color: #111;}
+.more-news h2{font-size: 20px; font-weight: normal; margin:15px 0px;  color: #FFF;}
+.more-news li {margin-bottom: 20px; padding: 15px; box-sizing: border-box;}
+.more-news li > div {padding-bottom: 20px; border-bottom: 1px solid #222;}
+.more-news p{color: #666; font-size: 13px; line-height: 21px; margin: 10px 0 0; display: inline-block; width: 100%;}
+.news-details{margin-top: 40px;}
+h1{}
+.media-box{margin: 40px -15px;}
+.news-article{color: #FFF; font-size: 13px;}
+.news-article p{margin-bottom: 15px;}
+.social-share{margin-top: 30px; text-align: right;}
+.right-panelbox{background-color: #111; padding: 15px;}
+.news-details h2{font-size: 22px; color: #FFF; margin-bottom: 20px;}
+.right-panelbox h3{font-size: 18px; color: #666;}
+.right-panelbox > div{margin-bottom: 15px; padding-bottom: 15px; border-bottom:1px solid #CCC;}
+.right-panelbox > div:last-child{border-bottom:0px solid #CCC; margin-bottom: 0px;}
+
+.twist-section{margin-top: 40px;}
+.twist-section p{font-size: 14px; line-height: 24px; color: #666; margin-bottom: 30px; }
+.twist-section h4{font-size: 18px; font-weight: normal; margin:15px 0px;  color: #FFF;}
+.twist-section ul{margin: 0; padding: 0px;}
+.twist-section li{margin:10px 0; padding: 0px; list-style-type: none; font-size: 14px;}
+.twist-section li label{margin-left:10px; color: #FFF; font-weight: normal; display: inline-block; vertical-align: middle; margin-bottom: 0px;}
+.twist-section li input{font-weight: normal; display: inline-block; vertical-align: middle; margin-bottom: 0px;}
+.twist-section li button{font-weight: normal; background-color: #111; border: 0px; margin-top: 20px; padding: 10px 15px; color: #FFF; display: inline-block; vertical-align: middle; margin-bottom: 0px; text-transform: uppercase;}
+
+.top-menu li{position: relative;}
+.top-menu li ul{position: absolute; -webkit-transition: all 0.2 ease-in; top: 100%; left:0px; width: 150px; background-color: #111; height: auto; max-height: 0px; overflow: hidden;}
+.top-menu li ul li{padding-bottom:10px ; }
+.top-menu > ul > li:hover ul{max-height: 500px; height: auto;}
+
+.pro-category li{margin:10px 0; padding: 0px; list-style-type: none; font-size: 14px;}
+.pro-category li label{margin-left:10px; color: #FFF; font-weight: normal; display: inline-block; vertical-align: middle; margin-bottom: 0px;}
+.pro-category li input{font-weight: normal; display: inline-block; vertical-align: middle; margin-bottom: 0px;}
+
+/* character list */
+.character-section{margin-top: 40px;}
+.character-col{margin-bottom: 30px;background-color: #111; padding: 15px;  padding-top: 0px;}
+.character-col .img-box{margin: 0 -15px;}
+.character-col h2{font-size: 20px; font-weight: normal; margin:15px 0px;   color: #FFF;}
+.character-col h4{font-size: 14px; font-weight: normal; margin:15px 0px;  color: #333;}
+.character-col p{color: #666; font-size: 13px; line-height: 21px; margin: 0px 0 0; display: inline-block; width: 100%;}
+.character-col a {color: #fac832; margin: 10px 0; font-size: 14px; display: inline-block;}
+.character-details{margin-top: 40px;}
+.character-details h1 {margin-bottom: 30px;}
+.character-details ul{list-style-type: none; }
+.character-details ul li{list-style-type: none; margin: 25px 0; color: #666; font-size: 14px;}
+.character-details ul li span{color: #fac832; text-transform: uppercase; font-weight: 300;}
+
+.character-details ul li p{color: #666; font-size: 13px; display: inline-block; width: 100%; line-height: 21px; margin: 0px 0 0; display: inline-block; width: 100%;}
+
+.coment-main ul{list-style-type: none; }
+.coment-main ul li h3{color: #fac832; font-size: 16px; margin-bottom: 5px;}
+.coment-main ul li{list-style-type: none; margin: 25px 0; color: #666; font-size: 14px; padding-bottom: 25px; border-bottom: 1px solid #333;}
+
+.coment-main-user textarea{background-color: #111; border: 1px solid #333; width: 100%; height: 100px;}
+.coment-main-user button{font-weight: normal; background-color: #fac832; border: 0px; padding: 10px 15px; color: #FFF; display: inline-block; vertical-align: middle; margin-bottom: 0px; text-transform: uppercase;}
