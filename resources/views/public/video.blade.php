@@ -161,6 +161,8 @@
 @section('extra-js')
     <script>
         $(document).ready(function(){
+            $('.detect').removeClass('active');
+            $('#videos').addClass('active');
             $(".filter-b").click(function(){
                 var value = $(this).attr('data-filter');
                 $('.filter-b').removeClass('active');

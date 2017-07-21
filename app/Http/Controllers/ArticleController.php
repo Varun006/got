@@ -12,7 +12,7 @@ class ArticleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(IsAdmin::class, ['except' => 'show']);
+        $this->middleware(IsAdmin::class, ['except' => 'show' , 'single']);
     }
 
     public function index()

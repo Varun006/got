@@ -6,14 +6,15 @@
         <div class="top-menu">
             <span class="menu"> </span>
             <!--Menu-->
+
             <ul>
-                <li><a href="/" class="active" class="scroll">Home</a></li>
-                <li><a href="/deadParty">Dead Party</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/videos">Videos</a></li>
-                <li><a href="/predictions">Predictions</a></li>
-                <li><a href="/news-articles">News & Articles</a></li>
-                <li><a href="/twist">Guess the twist</a></li>
+                <li><a href="/" class="active detect" class="scroll">home</a></li>
+                <li><a href="/deadParty" class="detect" id="dead">Dead Party</a></li>
+                <li><a href="/shop" class="detect" id="shop">Shop</a></li>
+                <li><a href="/videos" class="detect" id="videos">Videos</a></li>
+                <li><a href="/predictions" class="detect" id="predictions">Predictions</a></li>
+                <li><a href="/news-articles" class="detect" id="news-article">News & Articles</a></li>
+                <li><a href="/twist" class="detect" id="twist">Guess the twist</a></li>
                 {{--<li><a href="http://www.google.com">Google</a></li>--}}
             </ul>
             <!--End Menu-->

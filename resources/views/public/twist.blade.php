@@ -28,7 +28,7 @@
                             </strong>
                         </p>
 
-                        <h4>Twist Question for S7E01</h4>
+                        <h4>Twist Question for S7E02</h4>
 
                         <form method="POST" action="/twist/user/guess">
                             {{csrf_field()}}
@@ -64,6 +64,13 @@
 @stop
 
 @section('extra-scripts')
+    <script>
+        $(function(){
+            $('.detect').removeClass('active');
+            $('#twist').addClass('active');
+        });
+    </script>
+
     @if(session()->has('success'))
         <script type="text/javascript">
             $(document).ready(function(){

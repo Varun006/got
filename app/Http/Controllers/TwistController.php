@@ -12,9 +12,9 @@ class TwistController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('IsAdmin', ['except' => 'show']);
-
         $this->middleware('auth',['only' => 'show']);
+
+        $this->middleware(IsAdmin::class, ['except' => 'show']);
     }
 
     public function index()
@@ -56,7 +56,7 @@ class TwistController extends Controller
     // Change this method every Monday. (change where parameters)
     public function show()
     {
-        $question = Twist::where('id', '2')->first();
+        $question = Twist::where('episode', '2')->first();
 
         $answers = AnswerSet::where('episode','2')->get();
 

@@ -72,7 +72,7 @@ class LoginController extends Controller
             Auth::loginUsingId($userDetails->id);
         }
 
-        return redirect()->intended();
+        return redirect()->intended('/twist');
 
     }
 
@@ -98,6 +98,6 @@ class LoginController extends Controller
             Auth::loginUsingId($userDetails->id);
         }
 
-        return redirect()->intended();
+        return redirect()->intended('/twist');
     }
 }

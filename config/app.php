@@ -164,6 +164,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+//        Spatie\Glide\GlideServiceProvider::class,
+//        Intervention\Image\ImageServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -229,6 +231,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+//        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
+//        'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];

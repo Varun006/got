@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class AnswerSetController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(IsAdmin::class, ['except' => 'show']);
+    }
+
     public function index()
     {
         $episodes = Episode::pluck('2','id');

@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware(IsAdmin::class, ['except' => 'show']);
+        $this->middleware(IsAdmin::class, ['except' => 'show']);
     }
 
     public function show()
