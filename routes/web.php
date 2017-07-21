@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+auth()->loginUsingId(6);
 Route::get('/', function () {
     return view('welcome');
 });
@@ -67,7 +67,7 @@ Route::get('share',function(){
    return view('public.share');
 });
 
-Route::get('video', function () {
+Route::get('videos', function () {
    return view('public.video');
 });
 

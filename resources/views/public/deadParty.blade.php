@@ -58,3 +58,12 @@
         </div>
     </div>
 @stop
+
+@section('extra-js')
+    <script>
+        $(function(){
+            $('.detect').removeClass('active');
+            $('#dead').addClass('active');
+        });
+    </script>
+@stop

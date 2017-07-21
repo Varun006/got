@@ -12,14 +12,13 @@
                     <span class="menu"> </span>
                     <!--Menu-->
                     <ul>
-                        <li><a href="/" class="active" class="scroll">home</a></li>
-                        <li><a href="/deadParty">Dead Party</a></li>
-                        <li><a href="/shop">Shop</a></li>
-                        <li><a href="/videos">Videos</a></li>
-                        <li><a href="/predictions">Predictions</a></li>
-                        <li><a href="/news-articles">News & Articles</a></li>
-                        <li><a href="/twist">Guess the twist</a></li>
-                        {{--<li><a href="http://www.google.com">Google</a></li>--}}
+                        <li><a href="/" class="active detect" class="scroll">home</a></li>
+                        <li><a href="/deadParty" class="detect" id="dead">Dead Party</a></li>
+                        <li><a href="/shop" class="detect" id="shop">Shop</a></li>
+                        <li><a href="/videos" class="detect" id="videos">Videos</a></li>
+                        <li><a href="/predictions" class="detect" id="predictions">Predictions</a></li>
+                        <li><a href="/news-articles" class="detect" id="news-article">News & Articles</a></li>
+                        <li><a href="/twist" class="detect" id="twist">Guess the twist</a></li>
                     </ul>
                     <!--End Menu-->
                 </div>
@@ -69,9 +68,9 @@
                 <div class="col-md-6 left-grid">
 
                     <div class="right-grid1-icon">
-                        <img src="images/icon.png"> <!--Put your Central Icon HERE-->
+                        <img src="{{ @asset('images/icon.png') }}"> <!--Put your Central Icon HERE-->
                     </div>
-                    <img src="images/pic1.gif"/><!--Put your Right Image HERE-->
+                    <img src="{{ @asset('images/pic1.gif') }}"/><!--Put your Right Image HERE-->
                 </div>
                 <div class="col-md-6 right-grid">
                     <div class="right-top">
@@ -208,23 +207,10 @@
         </div>
         <div class="team-section" id="team"><!-- John Snow -->
             <div class="container">
-                <div class="team-header">
-
-                    <h3><img src="images/icon1.png"> About <span>Me</span></h3>
-
-                    <p>Hello, i'm John Snow</p>
-                </div>
                 <div class="team-grids">
-                    <div class="col-md-4 team-grid">
-                        <img src="images/t1.jpg">
-                    </div>
                     <div class="team-grids">
-                        <div class="col-md-8 team-grid">
+                        <div class="col-md-12 team-grid">
                             <div class="team-content">
-                                <h4>John Snow</h4><br><br><br><br>
-                                <h3>GOT Character</h3>
-                                <h2>In North</h2>
-                                <br>
                                 <p> i'm the bastard son of Eddard Stark, by a mother whose identity is a source of
                                     speculation. Raised by his father alongside his true-born half-siblings, but joins
                                     the Night's Watch when i nears adulthood. i'm constantly accompanied by my albino
@@ -243,7 +229,7 @@
             <div class="container">
                 <div class="kill-now-header">
 
-                    <h3><img src="images/img3.png"> GoT <span>Family</span></h3>
+                    <h3><img src="{{ @asset('images/img3.png') }}"> GoT <span>Family</span></h3>
                     <p>The big family in Game Of Thrones</p>
                 </div>
                 <div class="kill-now-grids"><!-- Columns 1 -->
@@ -299,37 +285,6 @@
                 </div>
             </div>
         </div>
-
-
-        <!--Contact Section-->
-        <div class="contact-section" id="contact">
-            <div class="contact-grids">
-                <div class="col-md-6 contact-leftgrid">
-                    <!--Title Contact Section-->
-                    <h3><img src="images/icon7.png"> Send me a <span>Sword</span></h3>
-                    <p>Kill me with a sword, please.</p>
-                    <!--End Title Contact Section-->
-                    <form>
-                        <input type="text" class="text" value="Name " onfocus="this.value = '';"
-                               onblur="if (this.value == '') {this.value = 'Name ';}">
-                        <input type="text" class="text" value="Email " onfocus="this.value = '';"
-                               onblur="if (this.value == '') {this.value = 'Email ';}">
-                        <textarea value="Message" onfocus="this.value = '';"
-                                  onblur="if (this.value == '') {this.value = 'Message';}">Message </textarea>
-                        <input type="submit" value="SEND">
-                    </form>
-                </div>
-                <!--Google Maps Section-->
-                <div class="col-md-6 contact-rightgrid">
-                    <div class="google-map">
-                        <img src="images/map.jpg"> </img>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-
-        </div>
-    </div>
     </div> <!--End Contact Section-->
 
     <div class="footer-section">

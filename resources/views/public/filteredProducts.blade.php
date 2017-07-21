@@ -16,8 +16,7 @@
                 <div class="col-lg-3 pro-category">
                     <ul>
                         <li>
-                            <input type="radio" name="filters" value="all" data-filter="*" id="all" class="filter-b"
-                                   checked><label>All Category</label>
+                            <input type="radio" name="filters" value="all" data-filter="*" id="all" class="filter-b" checked><label>All Category</label>
                         </li>
                         <li>
                             <input type="radio" name="filters" value="apparels" id="apparels" class="filter-b"
@@ -66,6 +65,10 @@
             $('input[value = '+currentFilter+']').attr('checked',true);
             $(".filter-b").click(function(){
                 var value = $(this).attr('data-filter');
+                if(value == "*") {
+                    window.location.href = '/shop';
+                    return false;
+                }
                 value = value.replace('.' , '');
                 $('.filter-b').removeClass('active');
                     window.location.href = '/product/'+value;

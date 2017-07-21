@@ -19,12 +19,12 @@
                         <a href="articles/{{ $article->slug }}">
                             <h2>{{ $article->title }}</h2>
                             @if($article->media_type == 'video')
-                                <div class="img-box"><img src="{{@asset('images/got-image.jpg')}}"></div>
+                                <div class="img-box"><img src="{{@asset('images/got-400.jpg'.'?w=300&h=400&fit=crop')}}"></div>
                             @else
                                 <div class="img-box"><img src="{{$article->url}}"></div>
                             @endif
                             <p>
-                                {!! $article->short_description !!}
+                                {!! str_limit($article->short_description , 200) !!}
                             </p>
                         </a>
                     </div>
@@ -56,7 +56,14 @@
 
 @section('extra-js')
     <script>
-
+        @section('extra-js')
+        <script>
+        $(function() {
+            $('.detect').removeClass('active');
+            $('#predictions').addClass('active');
+        });
+    </script>
+@stop
         /**
          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/

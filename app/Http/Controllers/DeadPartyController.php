@@ -9,6 +9,11 @@ use phpDocumentor\Reflection\Types\Null_;
 
 class DeadPartyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(IsAdmin::class, ['except' => 'show']);
+    }
+
     public function index()
     {
         $deads = DeadParty::all();
@@ -81,7 +86,6 @@ class DeadPartyController extends Controller
                 $dead->url = Storage::disk('local')->url($dead->photo);
              }
         });
-
 
         return view('public.deadParty',compact('deads'));
     }

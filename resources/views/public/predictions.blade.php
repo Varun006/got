@@ -39,3 +39,12 @@
         </div>
     </div>
 @stop
+
+@section('extra-js')
+    <script>
+        $(function() {
+            $('.detect').removeClass('active');
+            $('#predictions').addClass('active');
+        });
+    </script>
+@stop
