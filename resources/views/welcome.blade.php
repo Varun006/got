@@ -1,5 +1,10 @@
 @extends('public.layout.main')
 
+@section('')
+    <style>
+    </style>
+@stop
+
 @section('body')
 
     <div class="header" id="head">
@@ -9,7 +14,7 @@
                     <a href="/"><img src="images/logo.png"></a><!--Put your logo here-->
                 </div>
                 <div class="top-menu">
-                    <span class="menu"> </span>
+                    <span class="menu">Menu</span>
                     <!--Menu-->
                     <ul>
                         <li><a href="/" class="active detect" class="scroll">home</a></li>
