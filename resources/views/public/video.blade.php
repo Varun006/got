@@ -112,17 +112,17 @@
                 </div>
                 <br/>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6 embed-responsive embed-responsive-16by9">
                     <iframe width="365" height="365" src="https://www.youtube.com/embed/pVG5MP0b-xk" class="embed-responsive-item"
                             allowfullscreen></iframe>
                 </div>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6 embed-responsive embed-responsive-16by9">
                     <iframe width="365" height="365" src="https://www.youtube.com/embed/yKWoRPerORY" class="embed-responsive-item"
                             allowfullscreen></iframe>
                 </div>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6 embed-responsive embed-responsive-16by9">
                     <iframe width="365" height="365" src="https://www.youtube.com/embed/DzrLtBC7wXc" class="embed-responsive-item"
                             allowfullscreen></iframe>
                 </div>
