@@ -3,6 +3,30 @@
 @section('extra-css')
     <link href="{{@asset('got-css/atul.css')}}" rel="stylesheet" type="text/css"/>
     <style>
+        .intrinsic-container {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* 16x9 Aspect Ratio */
+        .intrinsic-container-16x9 {
+            padding-bottom: 56.25%;
+        }
+
+        /* 4x3 Aspect Ratio */
+        .intrinsic-container-4x3 {
+            padding-bottom: 75%;
+        }
+
+        .intrinsic-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .gallery-title {
             font-size: 36px;
             color: #fac832;
@@ -53,6 +77,13 @@
             margin-bottom: 30px;
         }
 
+        .nopadding {
+            padding: 2px !important;
+            margin: 0 !important;
+            outline: 2px solid #333;
+            background: #333;
+        }
+
     </style>
 @stop
 
@@ -81,77 +112,94 @@
                 </div>
                 <br/>
 
-
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/pVG5MP0b-xk" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/yKWoRPerORY" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/pVG5MP0b-xk" class="embed-responsive-item"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/DzrLtBC7wXc" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/yKWoRPerORY" class="embed-responsive-item"
+                            allowfullscreen></iframe>
+                </div>
+
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s6">
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/DzrLtBC7wXc" class="embed-responsive-item"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s5">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/e2WbfBwezb8" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/e2WbfBwezb8" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s5">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/GuISH0Lr3mU" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/GuISH0Lr3mU" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s5">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/NB-PhDmRXUI" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/NB-PhDmRXUI" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s4">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/pFm4gBZATWU" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/pFm4gBZATWU" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s4">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/Nb1Zxej3FfQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/Nb1Zxej3FfQ" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s4">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/_tn4Ge0xlyw" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/_tn4Ge0xlyw" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s3">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/5u7jCXxy_AE" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/5u7jCXxy_AE" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s3">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/38hnsgqf8O0" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/38hnsgqf8O0" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s3">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/m42an5GZzCI" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/m42an5GZzCI" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s2">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/i9_yyyQhMmI" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/i9_yyyQhMmI" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s2">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/U2d-etfU8YU" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/U2d-etfU8YU" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s2">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/1Mlhnt0jMlg" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/1Mlhnt0jMlg" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s1">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/Egy5A070cbA" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/Egy5A070cbA" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s1">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/0m3C03Q7pXs" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/0m3C03Q7pXs" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter s1">
-                    <iframe width="365" height="365" src="https://www.youtube.com/embed/4bv-b8MbCuc" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="365" height="365" src="https://www.youtube.com/embed/4bv-b8MbCuc" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -160,34 +208,23 @@
 
 @section('extra-js')
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.detect').removeClass('active');
             $('#videos').addClass('active');
-            $(".filter-b").click(function(){
+            $(".filter-b").click(function () {
                 var value = $(this).attr('data-filter');
                 $('.filter-b').removeClass('active');
-                 $(this).addClass('active');
+                $(this).addClass('active');
 
-                if(value == "all")
-                {
-                    //$('.filter').removeClass('hidden');
+                if (value == "all") {
                     $('.filter').show('1000');
                 }
-                else
-                {
-//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-                    $(".filter").not('.'+value).hide('3000');
-                    $('.filter').filter('.'+value).show('3000');
+                else {
+                    $(".filter").not('.' + value).hide('3000');
+                    $('.filter').filter('.' + value).show('3000');
 
                 }
             });
-//            I manually commented this code.
-//            if ($(".filter-b").removeClass("active")) {
-//                $(this).removeClass("active");
-//            }
-//            $(this).addClass("active");
-
         });
     </script>
 @stop
