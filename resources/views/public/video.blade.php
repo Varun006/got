@@ -176,7 +176,6 @@
                 else {
                     $(".filter").not('.' + value).hide('3000');
                     $('.filter').filter('.' + value).show('3000');
-
                 }
             });
         });

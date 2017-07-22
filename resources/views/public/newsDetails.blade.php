@@ -1,5 +1,16 @@
 @extends('public.layout.main')
 
+@section('share-meta')
+    <meta property="og:site_name" content="Scotch">
+    <meta property="og:url" content="http://www.gameofthronesfanworld.com">
+    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Scotch Web Development">
+    <meta property="og:description" content="Scotch is a web development blog discussing all things programming, development, web, and life.">
+    <meta property="og:image" content="{{ $news->url }}">
+    <meta property="fb:app_id" content="1323924781039533">
+@stop
+
 @section('extra-css')
     <link href="{{@asset('got-css/atul.css')}}" rel="stylesheet" type="text/css"/>
 @stop
@@ -17,8 +28,13 @@
                 <div class="col-lg-9">
                     <h1>{{ $news->title }}</h1>
                     <div class="social-share">
-                        <a href ="#" class="face-book-btn"> share with Facebook</a>
-                        <a href ="#" class="twitter-btn"> share with Twitter</a>
+                        <a href= "https://www.facebook.com/dialog/feed?app_id=1323924781039533
+&redirect_uri=http://www.gameofthronesfanworld.com/news/{{ $news->slug }}
+                                &link=http://www.gameofthronesfanworld.com/news/{{ $news->slug }}
+                                &picture=http://placekitten.com/500/500
+                                &caption=This%20is%20the%20caption
+                                &description=This%20is%20the%20description" target="_blank" class="face-book-btn"> share with Facebook</a>
+                        <a target="_blank" href="https://twitter.com/intent/tweet?text=Check out this news http://www.gameofthronesfanworld.com/news/{{ $news->slug }}" class="twitter-btn"> share with Twitter</a>
                     </div>
                     <div class="media-box">
                         @if($news->media_type == 'photo')

@@ -11,6 +11,15 @@
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{@asset('got-css/swipebox.css')}}">
+    <style>
+        .mobileMenu {
+            display:none;
+        }
+        @media screen and (max-width: 500px) {
+            .mobileMenu {
+                display:block; }
+        }
+    </style>
     @yield('extra-css')
     <script src="{{@asset('got-js/jquery-1.8.3.min.js')}}"></script>
     <!-- Light Box -->

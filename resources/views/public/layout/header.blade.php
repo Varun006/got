@@ -4,7 +4,7 @@
             <a href="/"><img src="{{ @asset('images/logo.png') }}"></a><!--Put your logo here-->
         </div>
         <div class="top-menu">
-            <span class="menu">Menu</span>
+            <span class="menu mobileMenu">Menu</span>
             <!--Menu-->
 
             <ul>
